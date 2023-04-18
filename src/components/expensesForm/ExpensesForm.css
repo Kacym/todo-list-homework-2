@@ -1,0 +1,16 @@
+.mainContent {
+    background-color: hsl(252, 68%, 78%);
+    padding: 30px;
+    border-radius: 9px;
+}
+.firstLineDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 600px;
+}
+.buttons {
+    padding-top: 28px;
+    display: flex;
+    gap: 14px;
+    justify-content: end;
+}
