@@ -55,7 +55,7 @@ const ExpensesForm = ( {click, setTodos} ) => {
                 <Input id={"title"} type={'text'} onChange={textInputValue}/>          
         </div>
             <div className='InputsAmout'>
-                <Label id={"amount"} title={"Количество"}/>
+                <Label id={"amount"} title={"Цена"}/>
                 <br />
                 <Input id={"amount"} type={'number'} onChange={numberInputValue}/>
                 </div>
