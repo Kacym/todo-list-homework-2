@@ -2,19 +2,25 @@ export const products = [
     {
         id: Math.floor(Math.random() * 100000),
         title: "Apple",
-        amount: 20,
-        date: new Date().toString()
+        price: "$ 02,00",
+        month: "Февраль",
+        year: "2022",
+        day: "14"
     },
     {
         id: Math.floor(Math.random() * 100000),
         title: "Watermelon",
-        amount: 2,
-        date: ""
+        price: "$ 01,00",
+        month: "Июнь",
+        year: "2023",
+        day: "26"
     },
     {
         id: Math.floor(Math.random() * 100000),
         title: "Cherry",
-        amount: 100,
-        date: ""
+        price: "$ 05,00",
+        month: "Сентябрь",
+        year: "2023",
+        day: "21"
     },
 ]

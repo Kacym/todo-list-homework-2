@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import Button from '../UI/button/Button'
 import './NewExpenses.css'
-import MainContent from '../expensesForm/ExpensesForm'
+import ExpensesForm from '../expensesForm/ExpensesForm'
 
-const NewExpenses = () => {
+
+const NewExpenses = ( {setTodos} ) => {
+
     const [showForm, setShowForm] = useState(false)
     function openAndCloseModal() {
         setShowForm((prev) => !prev)
@@ -11,21 +13,23 @@ const NewExpenses = () => {
     }
   return (
     <div className='newExpenses'>
-        <div className='newExpensesContainer'>
-
-        
 
         {showForm ? (
-            <MainContent click={openAndCloseModal}/>
+            <ExpensesForm setTodos={setTodos} click={openAndCloseModal}/>
         ): (
             <Button 
-                style={{padding: "16px 18px", width: "228px", cursor: "pointer"}} 
+                style={{
+                    padding: "16px 18px",
+                    width: "228px",
+                    cursor: "pointer", 
+                    marginLeft: "30%", 
+                    marginTop: "10%"
+                }} 
                 title="Добавить новый расход"
                 click={openAndCloseModal}
         />
         )}
         </div>
-    </div>
   )
 }
 

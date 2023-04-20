@@ -1,12 +1,9 @@
-.mainContent {
-    background-color: hsl(252, 68%, 78%);
-    padding: 30px;
+.ExpensesForm {
     border-radius: 9px;
 }
 .firstLineDiv {
     display: flex;
     justify-content: space-between;
-    width: 600px;
 }
 .buttons {
     padding-top: 28px;

@@ -1,9 +1,48 @@
 ul {
     list-style: none;
-    padding: 0;
+    padding: 20px;
+    background-color: #1F1F1F;
 }
 li {
-    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 28px 16px;
     width: 100%;
-    background-color: white;
+    margin-bottom: 16px;
+    border-radius: 12px;
+    background-color: #4B4B4B;
+    color: white;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+.product__info {
+    display: flex;
+    align-items: center;
+}
+.dateAndAmount {
+    text-align: center;
+    width: 84px;
+    height: 80px;
+    background-color: #1F1F1F;
+    border: solid white 1px;
+    padding-top: 4px;
+    border-radius: 10px;
+    margin-right: 14px;
+}
+.product__name {
+    font-size: 18px;
+}
+.dateAndAmount > p {
+    margin-bottom: 7px;
+    margin-top: -1px;
+}
+.price {
+    display: flex;
+    align-items: center;
+    background-color: #40005D;
+    border: solid 1px white;
+    padding: 10px 18px;
+    height: 44px;
+    border-radius: 10px;
+    font-size: 20px;
 }

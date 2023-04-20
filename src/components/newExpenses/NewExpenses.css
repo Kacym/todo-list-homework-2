@@ -1,5 +1,8 @@
 .newExpenses {
+    margin-top: 250px;
     background-color: #B0A1ED;
     border-radius: 12px;
-    padding: 30px 100px;
+    padding: 30px 40px;
+    width: 780px;
+    height: 287px;
 }

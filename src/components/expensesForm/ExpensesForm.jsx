@@ -3,30 +3,37 @@ import './ExpensesForm.css'
 import Input from '../UI/input/Input'
 import Label from '../UI/label/Label'
 import Button from '../UI/button/Button'
-import { products } from '../utils/constant'
 
 
-const MainContent = ( {click} ) => {
+const ExpensesForm = ( {click, setTodos} ) => {
 
-    const [todos, setTodos] = useState([]);
-    const [inputText, setInputText] = useState("");
-    const [inputNumber, setInputNumber] = useState(0);
-    const [inputDate, setInputDate] = useState(null);
+    const [inputText, setInputText] = useState();
+    const [inputNumber, setInputNumber] = useState();
+    const [inputDate, setInputDate] = useState();
+
+    const fullDate = new Date(inputDate);
+
+    const monthNames = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август",
+        "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"]
 
     function addTask() {
         const newItem = {
             id: Math.floor(Math.random() * 100000),
             title: inputText,
-            amount: inputNumber,
-            date: inputDate,
+            price: `$ ${inputNumber},00`,
+            day: fullDate.getDate(),
+            month: monthNames[fullDate.getMonth()],
+            year: fullDate.getFullYear(),
         }
-        setTodos([...todos, newItem])
-        products.push(newItem)
-        console.log(products);
+        setTodos((prevTodos)=>{
+            return (
+                [...prevTodos, newItem]
+            )
+        })
+
     }
 
     function textInputValue(e) {
-        // console.log(e.target.value);
         setInputText(e.target.value)
     }
 
@@ -39,7 +46,7 @@ const MainContent = ( {click} ) => {
     }
 
   return (
-    <div className='mainContent'>
+    <div className='ExpensesForm'>
         
         <div className="firstLineDiv">
             <div>
@@ -55,9 +62,9 @@ const MainContent = ( {click} ) => {
             </div>
             <br />
         <div>
-            <Label id={"date"} title={"Датировать"} onChange={dateInputValue}/>
+            <Label id={"date"} title={"Датировать"} />
             <br />
-            <Input id={"date"} type={'date'} style={{paddingRight: '5px'}}/>
+            <Input id={"date"} type={'date'} style={{paddingRight: '5px'}} onChange={dateInputValue}/>
         </div>
         <div className="buttons">
             <Button click={click} title="Отмена"/>
@@ -68,4 +75,4 @@ const MainContent = ( {click} ) => {
   )
 }
 
-export default MainContent
+export default ExpensesForm
